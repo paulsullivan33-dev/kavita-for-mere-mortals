@@ -1,0 +1,28 @@
+site_name: Kavita for Mere Mortals
+site_description: A reading server for the books, comics and manga you already own. Putting a folder of EPUB, PDF and comic files on a small server, letting it organise them into series, and reading them in the browser or any OPDS reader app, with the limits stated plainly.
+site_url: https://paulsullivan33-dev.github.io/kavita-for-mere-mortals/
+copyright: 'Part of <a href="https://paulsullivan33-dev.github.io/mere-mortals/">For Mere Mortals</a> · Text <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, code MIT'
+
+# Guides live at the repo root (nice for GitHub browsing).
+# The deploy workflow copies them into docs/ before building.
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - What Kavita Is: what-kavita-is.md
+  - The Moving Parts: the-moving-parts.md
+  - Installing Kavita: installing-kavita.md
+  - Your First Library: your-first-library.md
+  - How the Scanner Reads Your Files: how-the-scanner-reads.md
+  - Reading Books in Kavita: reading-books.md
+  - Reading Comics and PDFs: reading-comics.md
+  - Users and Sharing: users-and-sharing.md
+  - Collections, Reading Lists and Want to Read: collections-lists-and-want-to-read.md
+  - OPDS and Other Readers: opds-and-other-readers.md
+  - Recipes: recipes.md
+  - The Neighbours: the-neighbours.md
+  - Limits: limits.md
+  - Troubleshooting: troubleshooting.md
+  - Glossary: glossary.md
+  - Writing Criteria: criteria.md

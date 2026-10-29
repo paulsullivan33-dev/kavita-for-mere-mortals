@@ -1,0 +1,7 @@
+$ curl -s http://127.0.0.1:5000/ | grep -o "<title>[^<]*</title>"
+<title>Kavita</title>
+
+$ curl -s http://127.0.0.1:5000/api/health
+Ok
+$ curl -s http://127.0.0.1:5000/api/Server/server-info
+

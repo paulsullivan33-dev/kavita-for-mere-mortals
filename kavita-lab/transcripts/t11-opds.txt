@@ -1,0 +1,56 @@
+server-settings -> HTTP 404
+OPDS-related settings: {}
+
+== OPDS root feed ==
+GET /opds/<apiKey>/ -> HTTP 200 [text/HTML]
+ï»¿<!doctype html>
+<html lang="en" role="main" data-beasties-container>
+<head>
+  <meta charset="utf-8">
+  <title>Kavita</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="shortcut icon" href="assets/icons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#4ac694">
+  <meta name="msapplication-config" 
+
+GET /api/Settings -> HTTP 200
+enableOpds: True | port: 5000 | installVersion: 0.9.1.4
+
+GET /opds/<apiKey>/ -> HTTP 200 [text/HTML] xml=False
+GET /opds/<apiKey> -> HTTP 200 [text/HTML] xml=False
+GET /api/opds/<apiKey>/ -> HTTP 200 [application/xml] xml=True
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.w3.org/2005/Atom">
+  <updated>2026-10-29T18:34:11</updated>
+  <id>root</id>
+  <title>Kavita</title>
+  <icon>/api/opds/<redacted>/favicon</icon>
+  <author>
+    <name>Kavita</name>
+    <uri>https://www.kavitareader.com</uri>
+  </author>
+  <link rel="self" type="application/atom+xml;profile=opds-catalog;kind=navigation" href="/api/opds/" />
+  <link rel="start" type="application/atom+xml;profile=opds-catalog;kind=navigation" href="/api/opds/<redacted>" />
+  <link rel="search" type="application/opensearchdescription+xml" href="/api/opds/<redacted>/search" />
+  <entry>
+    <updated>2026-10-29T18:34:11</updated>
+    <id>onDeck</id>
+    <title>On Deck</title>
+    <content
+
+root feed entries: ['On Deck', 'Recently Updated', 'Recently Added', 'Reading Lists', 'Want to Read', 'All Libraries', 'All Collections']
+library links: ['/api/opds/<redacted>/libraries']
+GET /api/opds/<redacted>/libraries -> HTTP 200
+feed mentions 'The Clockwork Garden': False
+feed mentions 'Sea of Paper Boats': False
+
+libraries feed titles: ['All Libraries', 'Lab Books', 'Lab Comics']
+library links: ['/api/image/library-cover?libraryId=2&amp;apiKey=<redacted>', '/api/image/library-cover?libraryId=2&amp;apiKey=<redacted>', '/api/image/library-cover?libraryId=3&amp;apiKey=<redacted>', '/api/image/library-cover?libraryId=3&amp;apiKey=<redacted>']
+nav links in libraries feed: ['/api/opds/<redacted>/libraries', '/api/opds/<redacted>/libraries/2', '/api/opds/<redacted>/libraries/3']
+GET /api/opds/<redacted>/libraries -> HTTP 200 entries: ['All Libraries', 'Lab Books', 'Lab Comics']
+GET /api/opds/<redacted>/libraries/2 -> HTTP 200 entries: ['Lab Books', 'A Short Paper on Rain', 'Sea of Paper Boats', 'The Clockwork Garden']

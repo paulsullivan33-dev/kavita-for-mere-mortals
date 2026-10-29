@@ -1,0 +1,27 @@
+== Candidate reader endpoints for the EPUB chapter ==
+book-info: GET /api/Reader/book-info?chapterId=13 -> HTTP 404 [] 0 bytes
+book pages (Book ctrl): GET /api/Book/13/book-pages -> HTTP 404 [] 0 bytes
+book page 0: GET /api/Book/13/book-page?page=0 -> HTTP 200 [text/plain; charset=utf-8] 541 bytes
+book page 1: GET /api/Book/13/book-page?page=1 -> HTTP 200 [text/plain; charset=utf-8] 312 bytes
+chapter info: GET /api/Reader/chapter-info?chapterId=13 -> HTTP 200 [application/json; charset=utf-8] 442 bytes
+
+== The EPUB's first page, as served ==
+HTTP 200 text/plain; charset=utf-8
+<div class=" "><h1>Chapter 1</h1><p>The garden behind the workshop had not been watered in nineteen years, and yet it bloomed. Mara found the first gear on a Tuesday, turning slowly in the soil where the beans should have been, ticking like a small patient heart.</p><p>She dug with her fingers. Under the bean rows lay a shallow brass tray, and in the tray a hundred gears, each one turning the next, all of them fed by nothing she could see. At the centre of the tray a single flower opened and closed with the rhythm of a clock.</p></div>
+
+== Comic page image ==
+image page: GET /api/Image/page?chapterId=2&pageNumber=0 -> HTTP 404 [] 0 bytes
+image chapter-page: GET /api/Image/chapter-page?chapterId=2&pageNumber=0 -> HTTP 404 [] 0 bytes
+series cover: GET /api/Image/series-cover?seriesId=2 -> HTTP 200 [image/png] 10910 bytes
+cover content-type: image/png
+
+== Comic page via the reader route the web client uses ==
+GET /api/Reader/image?chapterId=2&page=0&apiKey=<the admin's key> -> HTTP 200 [image/png] 11028 bytes
+
+== Compare with the first page inside the CBZ file itself ==
+cbz first entry: 001.png 11028 bytes, sha256 0f644e0735e87a53
+served page:   11028 bytes, sha256 0f644e0735e87a53
+
+== PDF chapter via the reader route ==
+PDF chapter id: 14
+GET /api/Reader/pdf?chapterId=14 -> HTTP 200 [application/pdf] 681 bytes, starts with b'%PDF-1.4'

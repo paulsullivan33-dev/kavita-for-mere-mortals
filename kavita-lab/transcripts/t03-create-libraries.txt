@@ -1,0 +1,175 @@
+== The accidental 'Probe' library, as created by the field probe ==
+--> HTTP 200 GET http://127.0.0.1:5000/api/Library/libraries
+[
+  {
+    "lastScanned": "2026-10-29T18:27:49.9511249",
+    "coverImage": null,
+    "folderWatching": false,
+    "includeInDashboard": false,
+    "includeInRecommended": true,
+    "manageCollections": false,
+    "manageReadingLists": false,
+    "includeInSearch": true,
+    "allowScrobbling": false,
+    "folders": [
+      "/home/hatch/workspace/kavita-lab-work/library/Books"
+    ],
+    "collapseSeriesRelationships": false,
+    "libraryFileTypes": [
+      1
+    ],
+    "excludePatterns": [],
+    "allowMetadataMatching": false,
+    "enableMetadata": false,
+    "removePrefixForSortName": false,
+    "inheritWebLinksFromFirstChapter": false,
+    "defaultLanguage": "",
+    "metadataProvider": 2,
+    "id": 1,
+    "name": "Probe",
+    "type": 2
+  }
+]
+
+== Delete the Probe library (id 1) ==
+--> HTTP 200 true
+
+== Create library: Lab Books (type 2, fileGroupTypes [3, 4]) ==
+--> HTTP 200 POST http://127.0.0.1:5000/api/Library/create
+{
+  "lastScanned": "0001-01-01T00:00:00",
+  "coverImage": null,
+  "folderWatching": true,
+  "includeInDashboard": true,
+  "includeInRecommended": true,
+  "manageCollections": true,
+  "manageReadingLists": true,
+  "includeInSearch": true,
+  "allowScrobbling": false,
+  "folders": [
+    "/home/hatch/workspace/kavita-lab-work/library/Books"
+  ],
+  "collapseSeriesRelationships": false,
+  "libraryFileTypes": [
+    3,
+    4
+  ],
+  "excludePatterns": [],
+  "allowMetadataMatching": false,
+  "enableMetadata": true,
+  "removePrefixForSortName": false,
+  "inheritWebLinksFromFirstChapter": false,
+  "defaultLanguage": "",
+  "metadataProvider": 2,
+  "id": 2,
+  "name": "Lab Books",
+  "type": 2
+}
+
+== Create library: Lab Comics (type 0, fileGroupTypes [1, 2]) ==
+--> HTTP 500 POST http://127.0.0.1:5000/api/Library/create
+{
+  "status": 500,
+  "message": "invalid-metadata-provider",
+  "details": "   at Kavita.Server.Controllers.LibraryController.ValidateMetadataProvider(LibraryType type, MetadataProvider provider) in C:\\Users\\josep\\Documents\\Projects\\KavitaOrg\\Kavita\\Kavita.Server\\Controllers\\LibraryController.cs:line 774\n   at Kavita.Server.Controllers.LibraryController.AddLibrary(UpdateLibraryDto dto) in C:\\Users\\josep\\Documents\\Projects\\KavitaOrg\\Kavita\\Kavita.Server\\Controllers\\LibraryController.cs:line 72\n   at lambda_method6808(Closure, Object)\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaite
+... [3428 more chars]
+
+== Libraries after creation ==
+--> HTTP 200 GET http://127.0.0.1:5000/api/Library/libraries
+[
+  {
+    "lastScanned": "2026-10-29T18:28:01.3868843",
+    "coverImage": null,
+    "folderWatching": true,
+    "includeInDashboard": true,
+    "includeInRecommended": true,
+    "manageCollections": true,
+    "manageReadingLists": true,
+    "includeInSearch": true,
+    "allowScrobbling": false,
+    "folders": [
+      "/home/hatch/workspace/kavita-lab-work/library/Books"
+    ],
+    "collapseSeriesRelationships": false,
+    "libraryFileTypes": [
+      3,
+      4
+    ],
+    "excludePatterns": [],
+    "allowMetadataMatching": false,
+    "enableMetadata": true,
+    "removePrefixForSortName": false,
+    "inheritWebLinksFromFirstChapter": false,
+    "defaultLanguage": "",
+    "metadataProvider": 2,
+    "id": 2,
+    "name": "Lab Books",
+    "type": 2
+  }
+]
+
+library: 2 Lab Books type 2 folders ['/home/hatch/workspace/kavita-lab-work/library/Books'] fileGroupTypes None
+== Create Lab Comics with metadataProvider 0 ==
+--> HTTP 400 POST http://127.0.0.1:5000/api/Library/create
+{
+  "type": "https://tools.ietf.org/html/rfc9110#section-15.5.1",
+  "title": "One or more validation errors occurred.",
+  "status": 400,
+  "errors": {
+    "MetadataProvider": [
+      "The field MetadataProvider is invalid."
+    ]
+  },
+  "traceId": "00-1348a2fc443a955f315eb074eedf0592-d3e9625e6ed032f2-00"
+}
+
+== Create Lab Comics with metadataProvider 1 ==
+--> HTTP 400 POST http://127.0.0.1:5000/api/Library/create
+{
+  "type": "https://tools.ietf.org/html/rfc9110#section-15.5.1",
+  "title": "One or more validation errors occurred.",
+  "status": 400,
+  "errors": {
+    "MetadataProvider": [
+      "The field MetadataProvider is invalid."
+    ]
+  },
+  "traceId": "00-e367aa61cfe5b0f159eed515f64a85db-eaddc590456bf5b1-00"
+}
+
+library: 2 Lab Books type 2 folders ['/home/hatch/workspace/kavita-lab-work/library/Books'] fileTypes [3, 4] lastScanned 2026-10-29T18:28:01.3868843
+== Create Lab Comics with metadataProvider 3 ==
+--> HTTP 200 {"lastScanned":"0001-01-01T00:00:00","coverImage":null,"folderWatching":true,"includeInDashboard":true,"includeInRecommended":true,"manageCo
+--> HTTP 200 POST http://127.0.0.1:5000/api/Library/create
+{
+  "lastScanned": "0001-01-01T00:00:00",
+  "coverImage": null,
+  "folderWatching": true,
+  "includeInDashboard": true,
+  "includeInRecommended": true,
+  "manageCollections": true,
+  "manageReadingLists": true,
+  "includeInSearch": true,
+  "allowScrobbling": false,
+  "folders": [
+    "/home/hatch/workspace/kavita-lab-work/library/Comics"
+  ],
+  "collapseSeriesRelationships": false,
+  "libraryFileTypes": [
+    1,
+    2
+  ],
+  "excludePatterns": [],
+  "allowMetadataMatching": false,
+  "enableMetadata": true,
+  "removePrefixForSortName": false,
+  "inheritWebLinksFromFirstChapter": false,
+  "defaultLanguage": "",
+  "metadataProvider": 3,
+  "id": 3,
+  "name": "Lab Comics",
+  "type": 0
+}
+
+library: 2 Lab Books type 2 fileTypes [3, 4] metadataProvider 2
+library: 3 Lab Comics type 0 fileTypes [1, 2] metadataProvider 3

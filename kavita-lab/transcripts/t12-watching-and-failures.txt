@@ -1,0 +1,13 @@
+wrote /home/hatch/workspace/kavita-lab-work/library/Books/Harbour Lights/Harbour Lights.epub 5089 bytes
+Dropped a new EPUB into the Books folder. Waiting 20s for folder watching...
+series after 20s: ['A Short Paper on Rain', 'Moon Post Office', 'Sea of Paper Boats', 'Starlight Ferry', 'The Clockwork Garden']
+Not picked up in 20s; triggering a manual scan of Lab Books (id 2)
+series after manual scan: ['A Short Paper on Rain', 'Harbour Lights', 'Moon Post Office', 'Sea of Paper Boats', 'Starlight Ferry', 'The Clockwork Garden']
+
+== Failure evidence: create a library on a folder that does not exist ==
+--> HTTP 200 {"lastScanned":"0001-01-01T00:00:00","coverImage":null,"folderWatching":false,"includeInDashboard":false,"includeInRecommended":true,"manageCollections":false,"manageReadingLists":false,"includeInSearch":true,"allowScrobbling":false,"folders":["/home/hatch/workspace/kavita-lab-work/library/NoSuchFol
+
+== Failure evidence: wrong password at login ==
+--> HTTP 401 Your credentials are not correct
+deleted the empty 'Nowhere' library (id 14): HTTP 200
+final libraries: [(2, 'Lab Books'), (3, 'Lab Comics')]

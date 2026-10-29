@@ -1,0 +1,111 @@
+== Reading progress: mark page 1 of The Clockwork Garden read ==
+--> HTTP 200 
+
+== Continue point for series 10 ==
+--> HTTP 200 GET http://127.0.0.1:5000/api/Reader/continue-point?seriesId=10
+{
+  "id": 13,
+  "range": "The Clockwork Garden",
+  "number": "-100000",
+  "minNumber": -100000,
+  "maxNumber": -100000,
+  "sortOrder": -100000,
+  "pages": 2,
+  "isSpecial": true,
+  "title": "The Clockwork Garden",
+  "files": [
+    {
+      "id": 13,
+      "filePath": "/home/hatch/workspace/kavita-lab-work/library/Books/The Clockwork Garden/The Clockwork Garden.epub",
+      "pages": 2,
+      "bytes": 5450,
+      "format": 3,
+      "created": "2026-10-29T18:31:13.7503732",
+      "extension": ".epub",
+      "koreaderHash": "E9730B96ABFECE02E9C14BFE2A37881E"
+    }
+  ],
+  "pagesRead": 1,
+  "totalRea
+... [1786 more chars]
+
+Clockwork Garden after progress: pagesRead 1 of 2 pages
+
+== Want to read: add Sea of Paper Boats (series 9) ==
+--> HTTP 404 
+want-to-read list HTTP 404 : 
+
+== Invite a second user (reader1, Lab Books only) ==
+--> HTTP 404 POST http://127.0.0.1:5000/api/Admin/invite
+
+
+== Register a second account directly (is open registration closed?) ==
+--> HTTP 400 Not allowed
+
+== Want to read, correct body: {seriesIds: [9]} ==
+--> HTTP 404 
+list -> HTTP 404 
+
+== Invite reader1 via /api/Account/invite ==
+--> HTTP 200 POST http://127.0.0.1:5000/api/Account/invite
+{
+  "emailLink": "http://127.0.0.1:5000/registration/confirm-email?token=<redacted>&email=reader1%40example.invalid",
+  "emailSent": false,
+  "invalidEmail": true
+}
+
+
+== Users on the server now ==
+Admin/users -> HTTP 404 
+Account/users -> HTTP 404 
+
+== Want to read v2 list (POST) ==
+--> HTTP 404 
+
+== isWantToRead check for series 9 ==
+--> HTTP 404 
+
+== add-series, exact bundle casing ==
+--> HTTP 200 
+isWantToRead after add -> HTTP 404 
+
+== Want to read, lowercase routes ==
+isWantToRead(9) -> HTTP 200 true
+v2 list -> HTTP 200
+want-to-read contains: ['Sea of Paper Boats']
+
+== Re-invite reader1 to capture the confirmation link ==
+--> HTTP 400 POST http://127.0.0.1:5000/api/Account/invite
+User is already invited under this email and has yet to accepted invite.
+
+No link returned this time; trying a fresh invite for reader3
+--> HTTP 200 POST http://127.0.0.1:5000/api/Account/invite
+{
+  "emailLink": "http://127.0.0.1:5000/registration/confirm-email?token=<redacted>&email=reader3%40example.invalid",
+  "emailSent": false,
+  "invalidEmail": true
+}
+
+Captured invite token for reader3@example.invalid
+
+== Confirm the invite and set a password ==
+--> HTTP 200 POST http://127.0.0.1:5000/api/Account/confirm-email
+{
+  "id": 3,
+  "oidcId": null,
+  "username": "reader3",
+  "email": "reader3@example.invalid",
+  "roles": [
+    "Pleb",
+    "Login"
+  ],
+  "token": "<redacted-jwt>",
+  "refreshToken": "<redacted>
+... [2846 more chars]
+
+reader account is live; token saved
+
+== What the invited reader (reader3, Lab Books only) can see ==
+libraries -> HTTP 200 [(2, 'Lab Books')]
+series -> HTTP 200 ['A Short Paper on Rain', 'Sea of Paper Boats', 'The Clockwork Garden']
+Starlight Ferry detail (a comics series) for reader3 -> HTTP 404 {"type":"https://tools.ietf.org/html/rfc9110#section-15.5.5","title":"Not Found","status":404,"traceId":"00-6d799c8ba3f6

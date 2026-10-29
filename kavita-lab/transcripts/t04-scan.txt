@@ -1,0 +1,104 @@
+== Scan library Lab Books (id 2) ==
+--> HTTP 200 
+
+== Scan library Lab Comics (id 3) ==
+--> HTTP 200 
+
+poll 0: all-v2 returned 2 series
+poll 1: all-v2 returned 2 series
+poll 2: all-v2 returned 2 series
+poll 3: all-v2 returned 2 series
+poll 4: all-v2 returned 2 series
+poll 5: all-v2 returned 2 series
+poll 6: all-v2 returned 2 series
+poll 7: all-v2 returned 2 series
+poll 8: all-v2 returned 2 series
+poll 9: all-v2 returned 2 series
+
+== Series via POST /api/Series/all-v2 ==
+--> HTTP 200 POST http://127.0.0.1:5000/api/Series/all-v2
+[
+  {
+    "id": 1,
+    "name": "Moon Post Office",
+    "originalName": "Moon Post Office",
+    "localizedName": "",
+    "sortName": "Moon Post Office",
+    "pages": 4,
+    "coverImageLocked": false,
+    "lastChapterAdded": "2026-10-29T18:28:16.5848908",
+    "lastChapterAddedUtc": "2026-10-29T18:28:16.5849123",
+    "userRating": 0,
+    "hasUserRated": false,
+    "totalReads": 0,
+    "pagesRead": 0,
+    "latestReadDate": "0001-01-01T00:00:00",
+    "format": 1,
+    "created": "2026-10-29T18:28:16.2290318",
+    "sortNameLocked": false,
+    "localizedNameLocked": false,
+    "nameLocked": false,
+    "wordCount": 0,
+    "libraryId": 3,
+    "libraryName": "Lab Comics",
+    "minHoursToRead": 0,
+    "maxHoursToRead": 0,
+    "avgHoursToRead": 0.021929825,
+    "folderPath": "/home/hatch/workspace/kavita-lab-work/library/Comics/Moon Post Office",
+    "lowestFolderPath": "/home/hatch/workspace/kavita-lab-work/library/Comics/Moon Post Office",
+    "lastFolderScanned": "2026-10-29T18:28:16.7719592",
+    "dontMatch": false,
+    "isBlacklisted": false,
+    "isStandAlone": false,
+    "metadataProviderOverride": null,
+    "coverImage": "v1_c1.png",
+    "primaryColor": "#0F5642",
+    "secondaryColor": "#145A46",
+    "aniListId": 0,
+    "malId": 0,
+    "hardcoverId": 0,
+    "metronId": 0,
+    "comicVineId": null,
+    "mangaBakaId": 0,
+    "mangaBakaEditionId": null,
+    "cbrId": 0
+  },
+  {
+    "id": 2,
+    "name": "Starlight Ferry",
+    "originalName": "Starlight Ferry",
+    "localizedName": "",
+    "sortName": "Starlight Ferry",
+    "pages": 8,
+    "coverImageLocked": false,
+    "lastChapterAdded": "2026-10-29T18:28:18.0238126",
+    "lastChapterAddedUtc": "2026-10-29T18:28:18.023813",
+    "userRating": 0,
+    "hasUserRated": false,
+    "totalReads": 0,
+    "pagesRead": 0,
+    "latestReadDate": "0001-01-01T00:00:00",
+    "format": 1,
+    "created": "2026-10-29T18:28:17.9886409",
+    "sortNameLocked": false,
+    "localizedNameLocked": false,
+    "nameLocked": false,
+    "wordCount": 0,
+    "libraryId": 3,
+    "libraryName": "Lab Comics",
+    "minHoursToRead": 0,
+    "maxHoursToRead": 0,
+    "avgHoursToRead": 0.04385965,
+    "folderPath": "/home/hatch/workspace/kavita-lab-work/library/Comics/Starlight Ferry",
+    "lowestFolderPath": "/home/hatch/workspace/kavita-lab-work/library/Comics/Starlight Ferry",
+    "lastFolderScanned": "2026-10-29T18:28:18.0316266",
+    "dontMatch": false,
+    "isBlacklisted": false,
+    "isStandAlone": false,
+    "metadataProviderOverride": null,
+    "coverImage": "v2_c2.png",
+    "primaryColor": "#1F3C6E",
+    "secondaryColor": "#3E5780",
+    "aniLis
+... [165 more chars]
+

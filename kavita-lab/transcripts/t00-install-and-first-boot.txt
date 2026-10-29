@@ -1,0 +1,11 @@
+Kavita lab - install evidence
+Release: v0.9.1.4 (latest, checked via the GitHub releases API)
+Asset: kavita-linux-x64.tar.gz, 117675081 bytes
+Server self-report after boot: 'Kavita - v0.9.1.4' and GET /api/Settings installVersion: 0.9.1.4
+Extracted layout: Kavita/Kavita (executable), Kavita/config/ (created on first run: kavita.db, logs, covers, cache)
+
+First boot log lines:
+[Kavita] [2026-10-29 18:25:56.611 +00:00  ] [Information]  Generating JWT TokenKey for encrypting user sessions...
+[Kavita] [2026-10-29 18:26:43.236 +00:00  1] [Information] Microsoft.Hosting.Lifetime Now listening on: http://[::]:5000
+[Kavita] [2026-10-29 18:26:43.238 +00:00  1] [Information] Kavita.Server.Program Kavita - v0.9.1.4
+[Kavita] [2026-10-29 18:26:43.267 +00:00  1] [Information] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.

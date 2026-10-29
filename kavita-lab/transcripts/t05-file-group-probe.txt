@@ -1,0 +1,13 @@
+baseline series: ['Moon Post Office', 'Starlight Ferry']
+group 1: library 4 -> new series after scan: []
+   after delete, series: ['Moon Post Office', 'Starlight Ferry']
+group 2: library 5 -> new series after scan: ['Sea of Paper Boats', 'The Clockwork Garden']
+   after delete, series: ['Moon Post Office', 'Starlight Ferry']
+group 3: library 6 -> new series after scan: []
+   after delete, series: ['Moon Post Office', 'Starlight Ferry']
+group 4: library 7 -> new series after scan: []
+   after delete, series: ['Moon Post Office', 'Starlight Ferry']
+loose image folder created
+group 4: series now: ['Loose Pages', 'Moon Post Office', 'Starlight Ferry']
+group 2: series now: ['Moon Post Office', 'Starlight Ferry']
+final: ['Moon Post Office', 'Starlight Ferry']

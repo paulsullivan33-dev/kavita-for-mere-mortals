@@ -1,0 +1,115 @@
+== Collections before ==
+--> HTTP 404 
+
+== Create a collection holding two series ==
+--> HTTP 400 POST http://127.0.0.1:5000/api/Collection/update
+Collection does not exist
+
+collections now -> HTTP 404
+
+== Create a reading list ==
+--> HTTP 200 POST http://127.0.0.1:5000/api/ReadingList/create
+{
+  "id": 1,
+  "title": "Start Here",
+  "summary": "",
+  "promoted": false,
+  "coverImageLocked": false,
+  "coverImage": null,
+  "primaryColor": null,
+  "secondaryColor": null,
+  "itemCount": 0,
+  "startingYear": 0,
+  "startingMonth": 0,
+  "endingYear": 0,
+  "endingMonth": 0,
+  "ageRating": 0,
+  "ownerUserName": "labadmin",
+  "sourcePath": null,
+  "downloadUrl": null,
+  "shaHash": null,
+  "provider": 0,
+  "lastSyncCheckUtc": null,
+  "lastSyncedUtc": null,
+  "totalItemsAtImport": 0,
+  "tags": [],
+... [21 more chars]
+
+
+== Create 'Lab Picks' collection from series (update-for-series, id 0) ==
+--> HTTP 200 
+
+== Find the collection again ==
+/api/Collection/collections -> HTTP 404 
+/api/Collection/all -> HTTP 404 
+/api/Collection/tags -> HTTP 404 
+
+series-detail mentions 'Lab Picks': False
+series-detail mentions 'collection': False
+detail keys: ['specials', 'chapters', 'volumes', 'storylineChapters', 'libraryType', 'unreadCount', 'totalCount']
+search 'Lab Picks' -> HTTP 200 {"libraries":[],"series":[],"collections":[{"id":1,"title":"Lab Picks","summary":"","promoted":false,"ageRating":0,"coverImage":null,"primaryColor":null,"secondaryColor":null,"coverImageLocked":false,"itemCount":2,"owner":"labadmin","lastSyncUtc":"0001-01-01T00:00:00","source":0,"sourceUrl":null,"totalSourceCount":0,"missingSeriesFromSource":null}],"readingLists":[],"persons":[],"genres":[],"tags"
+
+== Add two series to the 'Start Here' reading list ==
+--> HTTP 200 Updated
+
+== The list's items ==
+--> HTTP 200 GET http://127.0.0.1:5000/api/ReadingList/items?readingListId=1
+[
+  {
+    "id": 1,
+    "order": 0,
+    "chapterId": 12,
+    "seriesId": 9,
+    "seriesName": "Sea of Paper Boats",
+    "seriesSortName": "Sea of Paper Boats",
+    "seriesFormat": 3,
+    "pagesRead": 0,
+    "pagesTotal": 2,
+    "chapterNumber": "Sea of Paper Boats",
+    "volumeNumber": "-100000",
+    "chapterTitleName": "Sea of Paper Boats",
+    "volumeId": 10,
+    "libraryId": 2,
+    "title": "Volume Sea of Paper Boats",
+    "libraryType": 2,
+    "libraryName": "Lab Books",
+    "releaseDate": "0001-01-01T00:00:00",
+    "readingListId": 1,
+    "lastReadingProgressUtc": null,
+    "fileSize": 5191,
+    "summary": "A short book written for a reading-server lab.",
+    "isSpecial": true,
+    "chapter": {
+      "id": 12,
+      "range": "Sea of Paper Boats",
+      "titleName": "Sea of Paper Boats",
+      "minNumber": -100000,
+      "maxNumber": -100000,
+      "sortOrder": -100000,
+      "pages": 2,
+      "isSpecial": true,
+      "releaseDate": "0001-01-01T00:00:00",
+      "summary": "A short book written for a reading-server lab.",
+      "writerName": "Lab Author",
+      "writerId": 1,
+      "pencillerName": null,
+      "pencillerId": null
+    },
+    "volume": {
+      "id": 10,
+      "name": "-100000",
+      "minNumber": -100000,
+      "maxNumber": -100000,
+      "seriesId": 9
+    }
+  },
+  {
+    "id": 2,
+    "order": 1,
+    "chapterId": 13,
+    "seriesId": 10,
+    "seriesName": "The Cl
+... [1241 more chars]
+
+lists -> HTTP 200
+ list: 1 Start Here itemCount 2 owner labadmin

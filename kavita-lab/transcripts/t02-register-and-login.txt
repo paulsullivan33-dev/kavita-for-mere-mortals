@@ -1,0 +1,98 @@
+== Register the first user (becomes admin) ==
+--> HTTP 200 POST http://127.0.0.1:5000/api/Account/register
+{
+  "id": 1,
+  "oidcId": null,
+  "username": "labadmin",
+  "email": "labadmin@example.invalid",
+  "roles": [
+    "Admin",
+    "Login"
+  ],
+  "token": "<redacted-jwt>",
+  "refreshToken": "<redacted>",
+  "apiKey": "<redacted>",
+  "preferences": {
+    "theme": {
+      "id": 1,
+      "name": "Dark",
+      "normalizedName": "dark",
+      "fileName": "dark.scss",
+      "isDefault": true,
+      "provider": 1,
+      "previewUrls": [
+        ""
+      ],
+      "description": "Default theme shipped with Kavita",
+      "author": null,
+      "compatibleVersion": null,
+      "selector": "bg-dark"
+    },
+    "globalPageLayoutMode": 0,
+    "blurUnreadSummaries": false,
+    "promptForDownloadSize": true,
+    "noTransitions": false,
+    "collapseSeriesRelationships": false,
+    "locale": "en",
+    "colorScapeEnabled": true,
+    "dataSaver": false,
+    "promptForRereadsAfter": 30,
+    "customKeyBinds": {},
+    "aniListScrobblingEnabled": false,
+    "wantToReadSync": false,
+    "bookReaderHighlightSlots": [
+      {
+        "id": 1,
+      
+... [1961 more chars]
+
+Saved token for labadmin. apiKey present: True
+
+== Log in again with the same credentials ==
+--> HTTP 200 POST http://127.0.0.1:5000/api/Account/login
+{
+  "id": 1,
+  "oidcId": null,
+  "username": "labadmin",
+  "email": "labadmin@example.invalid",
+  "roles": [
+    "Admin",
+    "Login"
+  ],
+  "token": "<redacted-jwt>",
+  "refreshToken": "<redacted>",
+  "apiKey": "<redacted>",
+  "preferences": {
+    "theme": {
+      "id": 1,
+      "name": "Dark",
+      "normalizedName": "dark",
+      "fileName": "dark.scss",
+      "isDefault": true,
+      "provider": 1,
+      "previewUrls": [
+        ""
+      ],
+      "description": "Default theme shipped with Kavita",
+      "author": null,
+      "compatibleVersion": null,
+      "selector": "bg-dark"
+    },
+    "globalPageLayoutMode": 0,
+    "blurUnreadSummaries": false,
+    "promptForDownloadSize": true,
+    "noTransitions": false,
+    "collapseSeriesRelationships": false,
+    "locale": "en",
+    "colorScapeEnabled": true,
+    "dataSaver": false,
+    "promptForRereadsAfter": 30,
+    "customKeyBinds": {},
+    "aniListScrobblingEnabled": false,
+    "wantToReadSync": false,
+    "bookReaderHighlightSlots": [
+      {
+        "id": 1,
+      
+... [1952 more chars]
+

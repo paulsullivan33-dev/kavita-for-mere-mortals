@@ -1,0 +1,7 @@
+update Lab Books -> groups [2, 3]: HTTP 200 {"lastScanned":"2026-10-29T18:28:01.3868843","coverImage":null,"folderWatching":true,"includeInDashboard":true,"includeI
+update Lab Comics -> groups [1, 4]: HTTP 200 {"lastScanned":"2026-10-29T18:28:20.5119859","coverImage":null,"folderWatching":true,"includeInDashboard":true,"includeI
+library: 2 Lab Books fileTypes [2, 3]
+library: 3 Lab Comics fileTypes [1, 4]
+scan library 2: HTTP 200
+scan library 3: HTTP 200
+poll 0: 5 series: ['A Short Paper on Rain', 'Moon Post Office', 'Sea of Paper Boats', 'Starlight Ferry', 'The Clockwork Garden']
